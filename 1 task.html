@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Хранилище книг</title>
+    <link rel="stylesheet" href="1 task.css"/>
+
+</head>
+<body>
+<div class ="auto-form">
+    <h2 class="auto-form_title">Книги</h2>
+    <table width="100%" cellspacing="0" cellpadding="4">
+        <tr>
+            <td align="right" width="100">Название</td>
+            <td><input id="name" type="name" name="name"/></td>
+        </tr>
+        <tr>
+            <td align="right">Автор</td>
+            <td><input id="author" type="author" name="author"/></td>
+        </tr>
+        <tr>
+            <td align="right" valign="top">Год издания</td>
+            <td><input id="year" type="year" name="year"/></td>
+        </tr>
+        <tr>
+            <td>Издательство</td>
+            <td><input id="publisher" type="publisher" name="publisher"/></td>
+        </tr>
+    </table>
+
+<button
+        class="auto-form_button" onclick="addBook()">Добавить</button>
+<button
+        class="auto-form_button" onclick="deleteBook()">Удалить</button>
+<button
+        class="auto-form_button"
+    onclick="findElem()">Найти книгу</button>
+    <select
+        id="selected"onchange="sortP()" >
+        <option disabled>Выберите тип</option>
+        <option selected value="name">Название</option>
+        <option value="author">Автор</option>
+        <option value="year">Год издания</option>
+        <option value="publisher">Издательство</option>
+    </select>
+    <select
+            id="select"onchange="sortP()" >
+        <option selected value=">">По возрастанию</option>
+        <option value="<">По убыванию</option>
+    </select>
+    <table  width="100%"  cellspacing="0" cellpadding="4" border="1" id="listBooks">
+        <caption>Список книг:<br>(для сортировки выберите значение в выпадающем списке)</caption>
+        <thead>
+        <tr>
+            <th data-type=">" onclick="sortP(0)">Название:</th>
+            <th data-type=">" onclick="sortP(1)">Автор:</th>
+            <th data-type=">" onclick="sortP(2)">
+                Год издания:</th>
+            <th data-type=">" onclick="sortP(3)"> Издательство:</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<script src="1 task.js"></script>
+</body>
+</html>
